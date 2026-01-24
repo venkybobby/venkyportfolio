@@ -16,8 +16,9 @@ function Main() {
             <a href="https://github.com/venkybobby" target="_blank" rel="noreferrer"><GitHubIcon/></a>
             <a href="https://www.linkedin.com/in/venkyramanathan" target="_blank" rel="noreferrer"><LinkedInIcon/></a>
           </div>
-          <h1>Venky Ramanathan</h1>
-          <p>Full Stack Engineer</p>
+          <h1>Venkatesan Ramanathan</h1>
+          <p>Director of Software Engineering</p>
+          <p style={{fontSize: '0.9em', marginTop: '10px', opacity: 0.8}}>Distributed Systems | Cloud-Native Platforms | AI-Enabled SDLC</p>
 
           <div className="mobile_social_icons">
             <a href="https://github.com/venkybobby" target="_blank" rel="noreferrer"><GitHubIcon/></a>

@@ -6,39 +6,38 @@ import Chip from '@mui/material/Chip';
 import '../assets/styles/Expertise.scss';
 
 const labelsFirst = [
+    "Java/J2EE",
     "React",
+    "Angular",
     "TypeScript",
     "JavaScript",
-    "HTML5",
-    "CSS3",
-    "SASS",
-    "Flask",
-    "Python",
-    "SQL",
-    "PostgreSQL",
-    "Postman"
+    ".NET Core",
+    "REST APIs",
+    "Microservices",
+    "Event-Driven Architecture"
 ];
 
 const labelsSecond = [
-    "Git",
-    "GitHub Actions",
-    "Docker",
-    "AWS",
+    "AWS (Lambda, Step Functions)",
     "Azure",
-    "Linux",
-    "Snowflake",
-    "Pandas",
-    "Selenium",
+    "Cloud-Native",
+    "CI/CD",
+    "DevSecOps",
+    "Camunda/BPMN",
+    "Kafka",
+    "DB2",
+    "Oracle",
+    "Graph Databases"
 ];
 
 const labelsThird = [
-    "OpenAI",
-    "Groq",
-    "LangChain",
-    "Qdrant",
-    "Hugging Face",
-    "LlamaIndex",
-    "Streamlit",
+    "GitHub Copilot",
+    "Cursor",
+    "AWS Bedrock",
+    "LangGraph",
+    "GenAI for SDLC",
+    "AI-Enabled Engineering",
+    "Agentic AI Workflows"
 ];
 
 function Expertise() {
@@ -49,8 +48,8 @@ function Expertise() {
             <div className="skills-grid">
                 <div className="skill">
                     <FontAwesomeIcon icon={faReact} size="3x"/>
-                    <h3>Full Stack Web Development</h3>
-                    <p>I have built a diverse array of web applications from scratch using modern technologies such as React and Flask. I have a strong proficiency in the SDLC process and frontend + backend development.</p>
+                    <h3>Full-Stack Engineering & Distributed Systems</h3>
+                    <p>22+ years of experience building high-throughput, regulated enterprise platforms. Expertise in microservices, REST APIs, API-first design, event-driven integration, and CQRS patterns. Strong background in Java/J2EE, React, Angular, and modern web technologies.</p>
                     <div className="flex-chips">
                         <span className="chip-title">Tech stack:</span>
                         {labelsFirst.map((label, index) => (
@@ -61,8 +60,8 @@ function Expertise() {
 
                 <div className="skill">
                     <FontAwesomeIcon icon={faDocker} size="3x"/>
-                    <h3>DevOps & Automation</h3>
-                    <p>Once the application is built, I help clients set up DevOps testing, CI/CD pipelines, and deployment automation to support the successful Go-Live.</p>
+                    <h3>Cloud Platforms & DevOps</h3>
+                    <p>Proven track record in AWS and Azure cloud-native transformation. Expertise in serverless architectures, workflow orchestration, CI/CD pipelines, and engineering excellence practices. Experience with hybrid/private cloud deployments and observability.</p>
                     <div className="flex-chips">
                         <span className="chip-title">Tech stack:</span>
                         {labelsSecond.map((label, index) => (
@@ -73,8 +72,8 @@ function Expertise() {
 
                 <div className="skill">
                     <FontAwesomeIcon icon={faPython} size="3x"/>
-                    <h3>GenAI & LLM</h3>
-                    <p>Stay relevant in the market by leveraging the latest AI models in your projects. I have professional experience building enterprise grade GenAI-enabled solutions to empower intelligent decision making.</p>
+                    <h3>AI-Enabled SDLC & GenAI</h3>
+                    <p>Pioneered embedding AI into the SDLC, improving engineering productivity by ~30%. Delivered agentic AI workflows for clinical assessments and adverse event reporting. Institutionalized GitHub Copilot and Cursor standards with guardrails for quality and compliance.</p>
                     <div className="flex-chips">
                         <span className="chip-title">Tech stack:</span>
                         {labelsThird.map((label, index) => (
