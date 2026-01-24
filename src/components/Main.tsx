@@ -8,9 +8,6 @@ function Main() {
   return (
     <div className="container">
       <div className="about-section">
-        <div className="image-wrapper">
-          <img src="https://my-aws-assets.s3.us-west-2.amazonaws.com/portfolio-img/avatar_circle.jpeg" alt="Avatar" />
-        </div>
         <div className="content">
           <div className="social_icons">
             <a href="https://github.com/venkybobby" target="_blank" rel="noreferrer"><GitHubIcon/></a>
@@ -18,7 +15,7 @@ function Main() {
           </div>
           <h1>Venkatesan Ramanathan</h1>
           <p>Director of Software Engineering</p>
-          <p style={{fontSize: '0.9em', marginTop: '10px', opacity: 0.8}}>Distributed Systems | Cloud-Native Platforms | AI-Enabled SDLC</p>
+          <p style={{fontSize: '0.9em', marginTop: '10px', opacity: 0.8}}>Distributed Systems | Cloud-Native Platforms | AI-Enabled SDLC | Enterprise Modernization</p>
 
           <div className="mobile_social_icons">
             <a href="https://github.com/venkybobby" target="_blank" rel="noreferrer"><GitHubIcon/></a>
