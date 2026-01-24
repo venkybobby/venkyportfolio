@@ -1,8 +1,8 @@
 import React from "react";
-import cqrsImage from '../assets/images/cqrs-architecture.png';
-import aeImage from '../assets/images/ae-summarization.png';
-import orderStatusImage from '../assets/images/order-status-harmonization.png';
-import callIntentImage from '../assets/images/call-intent-forecasting.png';
+import cqrsImage from '../assets/images/cqrs.png';
+import aeImage from '../assets/images/AE reporting.png';
+import orderStatusImage from '../assets/images/orderstatus.png';
+import callIntentImage from '../assets/images/likelihood for patient calling and intent.png';
 import '../assets/styles/Project.scss';
 
 function Project() {
