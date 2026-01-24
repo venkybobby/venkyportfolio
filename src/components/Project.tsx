@@ -1,70 +1,34 @@
 import React from "react";
-import mock01 from '../assets/images/mock01.png';
-import mock02 from '../assets/images/mock02.png';
-import mock03 from '../assets/images/mock03.png';
-import mock04 from '../assets/images/mock04.png';
-import mock05 from '../assets/images/mock05.png';
-import mock06 from '../assets/images/mock06.png';
-import mock07 from '../assets/images/mock07.png';
-import mock08 from '../assets/images/mock08.png';
-import mock09 from '../assets/images/mock09.png';
-import mock10 from '../assets/images/mock10.png';
+import cqrsImage from '../assets/images/cqrs-architecture.png';
+import aeImage from '../assets/images/ae-summarization.png';
+import orderStatusImage from '../assets/images/order-status-harmonization.png';
+import callIntentImage from '../assets/images/call-intent-forecasting.png';
 import '../assets/styles/Project.scss';
 
 function Project() {
     return(
     <div className="projects-container" id="projects">
-        <h1>Personal Projects</h1>
+        <h1>High-Impact Projects</h1>
         <div className="projects-grid">
             <div className="project">
-                <a href="https://www.filmate.club/" target="_blank" rel="noreferrer"><img src={mock10} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://www.filmate.club/" target="_blank" rel="noreferrer"><h2>Filmate AI</h2></a>
-                <p>Developed movie finder app with semantic search and sentiment analysis using OpenAI GPT-3.5 Turbo, Qdrant, React, and Flask.</p>
+                <a href="https://github.com/venkybobby/proactive-order-scheduling" target="_blank" rel="noreferrer"><img src={cqrsImage} className="zoom" alt="CQRS Architecture Diagram" width="100%"/></a>
+                <a href="https://github.com/venkybobby/proactive-order-scheduling" target="_blank" rel="noreferrer"><h2>Proactive Order Scheduling with CQRS Architecture</h2></a>
+                <p>Architected a CQRS-style database design for a call center application that pre-creates scheduling records before patient calls. The system proactively identifies and resolves issues such as missing copayments and prior authorizations, ensuring all critical data is available when calls arrive. This omni-channel solution seamlessly serves digital, texting, and call center interactions, dramatically reducing call handling time and elevating patient experience. <strong>Impact: $4M in operational savings and significant improvement in patient satisfaction metrics.</strong></p>
             </div>
             <div className="project">
-                <a href="https://venkybobby.itch.io/highspeedchase" target="_blank" rel="noreferrer"><img src={mock09} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://venkybobby.itch.io/highspeedchase" target="_blank" rel="noreferrer"><h2>High Speed Chase</h2></a>
-                <p>Designed, developed, and launched a 3D multiplayer racing game with C# and Unity. This is available on Itch.io for gamers worldwide to enjoy.</p>
+                <a href="https://github.com/venkybobby/ae-summarization-reporting" target="_blank" rel="noreferrer"><img src={aeImage} className="zoom" alt="AI-Powered Adverse Event Summarization" width="100%"/></a>
+                <a href="https://github.com/venkybobby/ae-summarization-reporting" target="_blank" rel="noreferrer"><h2>AI-Powered Adverse Event Summarization & Reporting</h2></a>
+                <p>Engineered an intelligent adverse event processing system leveraging advanced LLMs (OpenAI GPT and Claude) to automatically summarize patient-submitted assessments. The solution cross-references manufacturer contracts to classify events and generates compliant reporting forms. By automating manual classification and form generation workflows, the system eliminates hours of repetitive work while ensuring regulatory compliance. <strong>Impact: $3M in cost savings and 90% reduction in manual processing time.</strong></p>
             </div>
             <div className="project">
-                <a href="https://venkybobby.itch.io/spacecraft" target="_blank" rel="noreferrer"><img src={mock08} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://venkybobby.itch.io/spacecraft" target="_blank" rel="noreferrer"><h2>Astro Raiders</h2></a>
-                <p>Developed and released a 2D shooting game with C# and Unity. This project is hosted on the Itch.io public marketplace.</p>
+                <a href="https://github.com/venkybobby/order-status-harmonization" target="_blank" rel="noreferrer"><img src={orderStatusImage} className="zoom" alt="Order Status Harmonization Architecture" width="100%"/></a>
+                <a href="https://github.com/venkybobby/order-status-harmonization" target="_blank" rel="noreferrer"><h2>Order Status Harmonization Platform</h2></a>
+                <p>Built a unified order tracking application on AWS with React that provides real-time, accurate order status visibility across all channels. The platform proactively enrolls patients in text and mobile app notifications, delivering status updates before they initiate contact. This predictive communication strategy significantly reduces unsolicited call volume while improving patient engagement and satisfaction. <strong>Impact: Substantial reduction in call center volume and enhanced patient engagement rates.</strong></p>
             </div>
             <div className="project">
-                <a href="https://www.datumlearn.com/" target="_blank" rel="noreferrer"><img src={mock07} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://www.datumlearn.com/" target="_blank" rel="noreferrer"><h2>Datum: Integrated Learning Platform</h2></a>
-                <p>This is an online educational platform that provides high-quality, data science-focused learning resources in the Japanese language. I created the entire platform from scratch using Ruby on Rails.</p>
-            </div>
-            <div className="project">
-                <a href="http://www.wemanage.jp/" target="_blank" rel="noreferrer"><img src={mock06} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="http://www.wemanage.jp/" target="_blank" rel="noreferrer"><h2>WeManage: Real Estate Asset Management</h2></a>
-                <p>This mobile application allows realtors in Japan to securely manage their property information and view future income predictions. This app is built with Ruby on Rails and JavaScript.</p>
-            </div>
-            <div className="project">
-                <a href="https://www.byuh.edu/covid-19-case-management" target="_blank" rel="noreferrer"><img src={mock05} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://www.byuh.edu/covid-19-case-management" target="_blank" rel="noreferrer"><h2>COVID-19 Case Management</h2></a>
-                <p>Built official charts for COVID/vaccination tracking for an educational institution using JavaScript and the Google Sheets API v4. The dashboard served the university's leadership in their decision-making processes.</p>
-            </div>
-            <div className="project">
-                <a href="https://github.com/venkybobby/multi-reg-analysis" target="_blank" rel="noreferrer"><img src={mock04} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://github.com/venkybobby/multi-reg-analysis" target="_blank" rel="noreferrer"><h2>Multiple Regression Property Analysis</h2></a>
-                <p>Analyzed the real estate market in Japan and predicted property prices by implementing statistical methods such as OLS and multi-regression analysis. This project leveraged Python and various libraries such as Pandas, NumPy, Matplotlib, and Scikit-Learn.</p>
-            </div>
-            <div className="project">
-                <a href="https://holokai.byuh.edu/programs-of-study" target="_blank" rel="noreferrer"><img src={mock03} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://holokai.byuh.edu/programs-of-study" target="_blank" rel="noreferrer"><h2>Programs of Study</h2></a>
-                <p>Designed and developed a custom component for a CMS-based platform (e.g., 'Brightspot') using Java, Handlebars, and LESS. University students can find their majors of interest through this module.</p>
-            </div>
-            <div className="project">
-                <a href="https://hookele.byuh.edu/transfer-evaluation-guidelines-and-matrix" target="_blank" rel="noreferrer"><img src={mock02} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://hookele.byuh.edu/transfer-evaluation-guidelines-and-matrix" target="_blank" rel="noreferrer"><h2>Transfer Evaluation Matrix</h2></a>
-                <p>Created an interactive CSV table generator with Java, Handlebars, and LESS. This project helps transfer students to quickly identify eligible credits.</p>
-            </div>
-            <div className="project">
-                <a href="https://github.com/venkybobby/submeowrine" target="_blank" rel="noreferrer"><img src={mock01} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://github.com/venkybobby/submeowrine" target="_blank" rel="noreferrer"><h2>Submeowrine</h2></a>
-                <p>Developed and released an Android mobile application using Java and Android Studio that runs a 2D shooting game.</p>
+                <a href="https://github.com/venkybobby/call-intent-forecasting" target="_blank" rel="noreferrer"><img src={callIntentImage} className="zoom" alt="Call Intent Forecasting & Predictive Analytics" width="100%"/></a>
+                <a href="https://github.com/venkybobby/call-intent-forecasting" target="_blank" rel="noreferrer"><h2>Call Intent Forecasting & Predictive Analytics</h2></a>
+                <p>Developed a sophisticated machine learning solution combining classification models and rule-based algorithms to predict patient call intent and the likelihood of calls within a 7-day window. The system analyzes historical patterns, patient behavior, order status, and contextual factors to enable intelligent staffing decisions and optimal call routing. This predictive capability ensures the right resources are available at the right time, routing calls to specialized teams for faster resolution. <strong>Impact: $5M in operational efficiency gains through optimized staffing and improved call routing accuracy.</strong></p>
             </div>
         </div>
     </div>
