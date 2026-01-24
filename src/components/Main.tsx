@@ -11,7 +11,7 @@ function Main() {
         <div className="content">
           <div className="social_icons">
             <a href="https://github.com/venkybobby" target="_blank" rel="noreferrer"><GitHubIcon/></a>
-            <a href="https://www.linkedin.com/in/venkyramanathan" target="_blank" rel="noreferrer"><LinkedInIcon/></a>
+            <a href="https://www.linkedin.com/in/venky0411" target="_blank" rel="noreferrer"><LinkedInIcon/></a>
           </div>
           <h1>Venkatesan Ramanathan</h1>
           <p>Director of Software Engineering</p>
@@ -19,7 +19,7 @@ function Main() {
 
           <div className="mobile_social_icons">
             <a href="https://github.com/venkybobby" target="_blank" rel="noreferrer"><GitHubIcon/></a>
-            <a href="https://www.linkedin.com/in/venkyramanathan" target="_blank" rel="noreferrer"><LinkedInIcon/></a>
+            <a href="https://www.linkedin.com/in/venky0411" target="_blank" rel="noreferrer"><LinkedInIcon/></a>
           </div>
         </div>
       </div>
