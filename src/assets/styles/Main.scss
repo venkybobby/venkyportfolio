@@ -56,11 +56,12 @@
             color: #ffffff !important;
         }
         
+        a.phone-number,
         .phone-number {
             color: #ffffff !important;
             font-weight: bold !important;
             text-decoration: none !important;
-            font-size: 1.2em;
+            font-size: 1.2em !important;
             
             &:hover {
                 color: #ffffff !important;
@@ -68,6 +69,10 @@
             }
             
             &:visited {
+                color: #ffffff !important;
+            }
+            
+            &:link {
                 color: #ffffff !important;
             }
         }

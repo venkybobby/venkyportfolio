@@ -33,6 +33,16 @@ p, a, h1, h2, h3, h4, h5, label, button {
   font-family: "Lato", sans-serif;
 }
 
+.about-section .phone-contact,
+.about-section .phone-contact a.phone-number,
+.about-section .phone-contact .phone-number {
+  color: #ffffff !important;
+}
+
+.about-section .phone-contact svg {
+  color: #ffffff !important;
+}
+
 .navigation-bar {
   justify-content: space-between;
   background-color: #0d1116;
@@ -103,8 +113,13 @@ p, a, h1, h2, h3, h4, h5, label, button {
     color: #0d1116;
   }
 
-  .phone-contact,
-  .phone-contact .phone-number {
+  .about-section .phone-contact,
+  .about-section .phone-contact a.phone-number,
+  .about-section .phone-contact .phone-number {
+    color: #ffffff !important;
+  }
+  
+  .about-section .phone-contact svg {
     color: #ffffff !important;
   }
 
