@@ -16,8 +16,8 @@ function Project() {
                 <p>Architected a CQRS-style database design for a call center application that pre-creates scheduling records before patient calls. The system proactively identifies and resolves issues such as missing copayments and prior authorizations, ensuring all critical data is available when calls arrive. This omni-channel solution seamlessly serves digital, texting, and call center interactions, dramatically reducing call handling time and elevating patient experience. <strong>Impact: $4M in operational savings and significant improvement in patient satisfaction metrics.</strong></p>
             </div>
             <div className="project">
-                <img src={aeImage} className="zoom" alt="AI-Powered Adverse Event Summarization" width="100%"/>
-                <h2>AI-Powered Adverse Event Summarization & Reporting</h2>
+                <a href="https://clinical-ae-agent-bmj4hszpwa-uc.a.run.app/" target="_blank" rel="noreferrer"><img src={aeImage} className="zoom" alt="AI-Powered Adverse Event Summarization" width="100%"/></a>
+                <a href="https://clinical-ae-agent-bmj4hszpwa-uc.a.run.app/" target="_blank" rel="noreferrer"><h2>AI-Powered Adverse Event Summarization & Reporting</h2></a>
                 <p>Engineered an intelligent adverse event processing system leveraging advanced LLMs (OpenAI GPT and Claude) to automatically summarize patient-submitted assessments. The solution cross-references manufacturer contracts to classify events and generates compliant reporting forms. By automating manual classification and form generation workflows, the system eliminates hours of repetitive work while ensuring regulatory compliance. <strong>Impact: $3M in cost savings and 90% reduction in manual processing time.</strong></p>
             </div>
             <div className="project">
