@@ -21,9 +21,9 @@ function Main() {
           <h1>Venkatesan Ramanathan</h1>
           <p>Director of Software Engineering</p>
           <p style={{fontSize: '0.9em', marginTop: '10px', opacity: 0.8}}>Distributed Systems | Cloud-Native Platforms | AI-Enabled SDLC | Enterprise Modernization</p>
-          <div style={{display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px'}}>
-            <PhoneIcon style={{fontSize: '1.2em', color: 'white'}}/>
-            <a href="tel:570-817-1128" style={{textDecoration: 'none', color: 'white', fontWeight: 'bold'}}>570-817-1128</a>
+          <div className="phone-contact" style={{display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px'}}>
+            <PhoneIcon style={{fontSize: '1.2em', color: '#ffffff'}}/>
+            <a href="tel:570-817-1128" className="phone-number">570-817-1128</a>
           </div>
 
           <div className="mobile_social_icons">
