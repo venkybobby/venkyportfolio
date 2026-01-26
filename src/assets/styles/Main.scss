@@ -52,6 +52,10 @@
     .phone-contact {
         color: white !important;
         
+        svg {
+            color: #ffffff !important;
+        }
+        
         .phone-number {
             color: #ffffff !important;
             font-weight: bold !important;
@@ -61,6 +65,10 @@
             &:hover {
                 color: #ffffff !important;
                 text-decoration: underline !important;
+            }
+            
+            &:visited {
+                color: #ffffff !important;
             }
         }
     }

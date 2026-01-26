@@ -103,6 +103,11 @@ p, a, h1, h2, h3, h4, h5, label, button {
     color: #0d1116;
   }
 
+  .phone-contact,
+  .phone-contact .phone-number {
+    color: #ffffff !important;
+  }
+
   a:hover {
     color: #5000ca;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
