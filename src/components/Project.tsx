@@ -3,6 +3,7 @@ import cqrsImage from '../assets/images/cqrs.png';
 import aeImage from '../assets/images/AE reporting.png';
 import orderStatusImage from '../assets/images/orderstatus.png';
 import callIntentImage from '../assets/images/likelihood for patient calling and intent.png';
+import rxintelliImage from '../assets/images/rxintelli.png';
 import '../assets/styles/Project.scss';
 
 function Project() {
@@ -29,6 +30,11 @@ function Project() {
                 <img src={callIntentImage} className="zoom" alt="Call Intent Forecasting & Predictive Analytics" width="100%"/>
                 <h2>Call Intent Forecasting & Predictive Analytics</h2>
                 <p>Developed a sophisticated machine learning solution combining classification models and rule-based algorithms to predict patient call intent and the likelihood of calls within a 7-day window. The system analyzes historical patterns, patient behavior, order status, and contextual factors to enable intelligent staffing decisions and optimal call routing. This predictive capability ensures the right resources are available at the right time, routing calls to specialized teams for faster resolution. <strong>Impact: $5M in operational efficiency gains through optimized staffing and improved call routing accuracy.</strong></p>
+            </div>
+            <div className="project">
+                <a href="https://deluxe-baklava-743914.netlify.app" target="_blank" rel="noreferrer"><img src={rxintelliImage} className="zoom" alt="RxIntelli Intelligent Pharmacy Platform" width="100%"/></a>
+                <a href="https://deluxe-baklava-743914.netlify.app" target="_blank" rel="noreferrer"><h2>Intelligent Pharmacy Platform</h2></a>
+                <p>Architected RxIntelli, a production-grade full-stack platform that automates and orchestrates the complete prescription fulfillment workflow from multi-channel intake through delivery scheduling. The solution integrates intelligent validation using machine learning and rule-based logic, ensuring compliance guardrails and role-based access controls throughout the process. By consolidating fragmented point solutions into a unified, autonomous system, RxIntelli transforms prescription processing from a manual, error-prone operation into a secure, observable digital flow. The platform provides real-time executive visibility into every workflow step, enabling proactive issue resolution and dramatically reducing cycle times from days to minutes. <strong>Impact: Significant reduction in processing time, elimination of manual errors, and enhanced visibility into prescription fulfillment operations.</strong></p>
             </div>
         </div>
     </div>
