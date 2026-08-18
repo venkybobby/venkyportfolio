@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSRSupport — a forward-deployed engagement, end to end · Venky R</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16232B;
+    --muted:#5B6B74;
+    --paper:#FAFBFC;
+    --card:#FFFFFF;
+    --line:#D8E0E4;
+    --petrol:#0E5F63;
+    --petrol-soft:#E4EFEF;
+    --green-ink:#1E6B3A; --green-bg:#EAF6EE; --green-line:#BFE3CC;
+    --amber-ink:#8A6116; --amber-bg:#FFF7E3; --amber-line:#EFD9A1;
+    --red-ink:#9C2B2B;  --red-bg:#FBEDED;  --red-line:#EFC7C7;
+    --measure:46rem;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+  body{
+    background:var(--paper); color:var(--ink);
+    font-family:"Source Serif 4", Georgia, serif;
+    font-size:1.0625rem; line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--petrol); text-decoration-thickness:1px; text-underline-offset:2px}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--petrol); outline-offset:2px}
+  .wrap{max-width:var(--measure); margin:0 auto; padding:0 1.25rem}
+
+  /* ---------- header ---------- */
+  header{padding:4.5rem 0 2.5rem; border-bottom:1px solid var(--line); background:var(--card)}
+  .kicker{
+    font-family:"IBM Plex Mono",monospace; font-size:.72rem; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--petrol); margin-bottom:1rem;
+  }
+  h1{
+    font-family:Archivo,system-ui,sans-serif; font-weight:800;
+    font-size:clamp(1.9rem, 4.6vw, 2.9rem); line-height:1.08; letter-spacing:-.015em;
+    margin-bottom:1.1rem;
+  }
+  h1 .quiet{color:var(--muted); font-weight:700}
+  .lede{font-size:1.15rem; max-width:40rem; color:var(--ink)}
+  .lede b{font-weight:600}
+  .verdicts{display:flex; flex-wrap:wrap; gap:.5rem; margin-top:1.5rem}
+  .chip{
+    font-family:"IBM Plex Mono",monospace; font-size:.74rem; padding:.35rem .6rem;
+    border-radius:3px; border:1px solid var(--green-line); background:var(--green-bg); color:var(--green-ink);
+  }
+
+  /* ---------- disclosure banner (styled like the product's own status cards) ---------- */
+  .banner{
+    margin:2.25rem auto; border:1px solid var(--amber-line); background:var(--amber-bg);
+    border-radius:6px; padding:1.1rem 1.25rem;
+  }
+  .banner h2{
+    font-family:Archivo,sans-serif; font-size:.95rem; font-weight:700; color:var(--amber-ink);
+    display:flex; align-items:center; gap:.5rem; margin-bottom:.4rem;
+  }
+  .banner p{font-size:.98rem; color:#5d4a1d}
+  .banner p + p{margin-top:.5rem}
+
+  /* ---------- sections ---------- */
+  section{padding:2.6rem 0}
+  section + section{border-top:1px solid var(--line)}
+  h2.sec{
+    font-family:Archivo,sans-serif; font-weight:800; font-size:1.45rem;
+    letter-spacing:-.01em; margin-bottom:1.1rem;
+  }
+
+  /* evidence stamp — the page's signature, borrowed from the demo cards */
+  .stamp{
+    font-family:"IBM Plex Mono",monospace; font-size:.7rem; color:var(--muted);
+    border:1px solid var(--line); background:var(--card); border-radius:3px;
+    padding:.15rem .45rem; white-space:nowrap;
+  }
+  .stamp.todo{border-style:dashed; color:var(--amber-ink); border-color:var(--amber-line)}
+
+  /* ---------- the arc rail ---------- */
+  .arc{list-style:none}
+  .arc li{
+    position:relative; padding:0 0 2rem 2.6rem; border-left:2px solid var(--line);
+    margin-left:.4rem;
+  }
+  .arc li:last-child{padding-bottom:.25rem}
+  .arc .dot{
+    position:absolute; left:-0.83rem; top:.1rem; width:1.6rem; height:1.6rem;
+    border-radius:50%; background:var(--petrol); color:#fff;
+    font-family:"IBM Plex Mono",monospace; font-size:.66rem; font-weight:500;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .arc h3{
+    font-family:Archivo,sans-serif; font-size:1.05rem; font-weight:700; margin-bottom:.35rem;
+    display:flex; flex-wrap:wrap; gap:.6rem; align-items:baseline;
+  }
+  .arc p{color:var(--ink); max-width:38rem}
+  .arc .pull{
+    margin-top:.55rem; padding:.55rem .8rem; border-left:3px solid var(--petrol);
+    background:var(--petrol-soft); font-style:italic; font-size:.98rem; max-width:36rem;
+    border-radius:0 4px 4px 0;
+  }
+
+  /* ---------- methodology ---------- */
+  .method{border:1px solid var(--line); background:var(--card); border-radius:6px; padding:1.25rem 1.4rem}
+  .method p{max-width:38rem}
+  .method ul{margin:.8rem 0 0 1.1rem}
+  .method li{margin-bottom:.45rem}
+  .method li::marker{color:var(--petrol)}
+
+  /* ---------- evals detail ---------- */
+  .evals{display:grid; gap:1rem}
+  .evalcard{border:1px solid var(--line); background:var(--card); border-radius:6px; padding:1.15rem 1.3rem}
+  .evalcard h3{
+    font-family:Archivo,sans-serif; font-size:1.02rem; font-weight:700;
+    display:flex; flex-wrap:wrap; gap:.6rem; align-items:baseline; margin-bottom:.75rem;
+  }
+  .evalcard dl{display:grid; gap:.7rem}
+  .evalcard dt{font-family:Archivo,sans-serif; font-weight:700; font-size:.88rem; letter-spacing:.01em}
+  .evalcard dd{font-size:.97rem; max-width:40rem; margin-top:.1rem}
+  .caught{color:var(--green-ink); font-style:normal; font-weight:600}
+  .findings{list-style:none; display:grid; gap:.55rem; margin-top:1rem}
+  .findings li{
+    border-left:3px solid var(--petrol); background:var(--petrol-soft);
+    padding:.55rem .8rem; border-radius:0 4px 4px 0; font-size:.97rem; max-width:42rem;
+  }
+
+  /* ---------- artifacts ---------- */
+  .artifacts{list-style:none; display:grid; gap:.6rem}
+  .artifacts li{
+    display:flex; flex-wrap:wrap; gap:.35rem .75rem; align-items:baseline;
+    border:1px solid var(--line); background:var(--card); border-radius:6px; padding:.8rem 1rem;
+  }
+  .artifacts .name{font-family:Archivo,sans-serif; font-weight:700; font-size:.98rem}
+  .artifacts .desc{color:var(--muted); font-size:.92rem; flex-basis:100%}
+
+  /* ---------- about / footer ---------- */
+  .about p{max-width:38rem}
+  footer{
+    border-top:1px solid var(--line); padding:2rem 0 3.5rem; color:var(--muted);
+    font-size:.9rem;
+  }
+  footer .wrap{display:flex; flex-wrap:wrap; gap:1rem; justify-content:space-between}
+
+  @media (max-width:560px){
+    header{padding-top:3rem}
+    .arc li{padding-left:2.1rem}
+  }
+  @media print{
+    header,section{padding:1.2rem 0}
+    .banner{break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="kicker">Case study · Forward-deployed engineering</div>
+    <h1>CSRSupport <span class="quiet">— one engagement, discovery to acceptance test.</span></h1>
+    <p class="lede">A payer-side cost-estimator agent for call-center reps, built and run as a <b>complete forward-deployed engagement</b>: discovery that questioned whether AI belonged at all, a scope agreement, two refusals delivered to the client's own VP, a mid-build scope shift, a steering review that won all three asks, and an acceptance test designed around the two ways adoption fails.</p>
+    <div class="verdicts">
+      <span class="chip">3 / 3 steering asks granted</span>
+      <span class="chip">2 defects found by testing a stakeholder's challenge</span>
+      <span class="chip">22 / 22 live checks gate every deploy</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="banner" role="note">
+    <h2>⚠ Read this first — the client is simulated. The system is not.</h2>
+    <p>"Meridian Health Plans," Dana, the steering committee, and the reps are fictional personas, run adversarially by an AI coach that injected scope shifts, planted data traps, and challenged claims mid-engagement. Everything else is real: the code, the deployed system, the PostgreSQL-backed calculator, the 103-test suite, the live scenario checks that fail the deployment, and every defect described below — each was genuinely found, reproduced, and fixed.</p>
+    <p>The format exists for one reason: FDE lead work is client work, and there is no honest way to show client judgment without a client. A simulation disclosed is evidence; a simulation implied to be real would poison everything else on this page. The system this page describes makes the same trade — it says "no rate on file" rather than estimating.</p>
+  </div>
+</div>
+
+<div class="wrap">
+
+<section aria-labelledby="arc-h">
+  <h2 class="sec" id="arc-h">The engagement, in eight moves</h2>
+  <ol class="arc">
+    <li>
+      <span class="dot" aria-hidden="true">01</span>
+      <h3>Discovery — including "do we need AI at all?" <span class="stamp">scoping call · Q6</span></h3>
+      <p>The client wanted an AI cost estimator. The seventh discovery question was whether AI belonged in the product at all — if the values already exist, the flow is deterministic. That question produced the architecture and, per the client, the trust: the split landed as <em>"the AI part stays at the language boundary, the money stays deterministic."</em></p>
+    </li>
+    <li>
+      <span class="dot" aria-hidden="true">02</span>
+      <h3>Scope agreement — exclusions stated out loud <span class="stamp">8 user stories · audited</span></h3>
+      <p>In: plain-English questions, eligibility check, rate lookup, deterministic math, the number <em>with its why</em>. Out, in writing: CRM integration, real systems, prior-auth workflow, anything member-facing. Two ambiguities the sample data couldn't settle — embedded vs. aggregate family deductibles, and coinsurance when the family threshold is met but the individual isn't — were escalated to the client instead of assumed, because one member's answer flips depending on the rule.</p>
+    </li>
+    <li>
+      <span class="dot" aria-hidden="true">03</span>
+      <h3>The architecture decision <span class="stamp">structural, not prompted</span></h3>
+      <p>The language model is not allowed to produce a number. Its only job is resolving which member and which procedure; every dollar figure comes from an ordinary function, and a separate check blocks any figure that cannot be traced to one. Refusals — termed member, excluded benefit, no rate on file — are types in the system, not tones in a prompt.</p>
+      <div class="pull">The honest boundary, stated to the client unprompted: the model can at worst aim the calculator at the wrong procedure. It can never invent what the calculator returns — and the screen always names exactly what it priced.</div>
+    </li>
+    <li>
+      <span class="dot" aria-hidden="true">04</span>
+      <h3>Build &amp; verification — checks that fail the deploy <span class="stamp">103 unit · 17 integration · 18 offline · 22 live</span></h3>
+      <p>Two independent verification layers: offline tests pin every figure to the client's worked examples; a live suite runs the deployed system through a real language model on every deployment — and the deployment fails if it fails. The live suite also reads back execution traces to confirm no member was ever priced before that member's eligibility was checked: the ordering guarantee no offline test can establish.</p>
+    </li>
+    <li>
+      <span class="dot" aria-hidden="true">05</span>
+      <h3>Adversarial findings — including proving my own coach wrong <span class="stamp">4/4 repelled · 2 defects fixed</span></h3>
+      <p>A prompt claiming supervisor authority instructed the system to skip the eligibility check on a terminated member; it refused. A demo screen that looked correct was diagnosed by the coach as a synonym gap — a cold reproduction proved the real mechanism was different (an always-ambiguous gate returning before qualifier scoring, plus a second screen passing only on leftover turn state). And when the client's VP asked what happens if the model picks the wrong procedure, the question was tested rather than answered from the design — it found two real defects, both fixed, both regression-covered.</p>
+      <div class="pull">"We tested it rather than answering from the design, and it found two real defects" — the sentence that turned a skeptical VP into the project's sponsor.</div>
+    </li>
+    <li>
+      <span class="dot" aria-hidden="true">06</span>
+      <h3>The scope shift — one yes, one no <span class="stamp">DOS shipped · portal declined</span></h3>
+      <p>Mid-engagement, Compliance asked for a date of service on every quote, and the VP asked to put the tool in the member portal. The first was accepted and re-scoped honestly: eligibility exact as of the date, dollars from today's balances with the assumption printed on the quote, and four distinct refusal grounds — past date, beyond ninety days, after coverage ends, next plan year. The second was declined with ranked reasons — refusals written for trained operators, an unbound member ID that becomes an enumerable PHI exposure, termed-member blocks turning into adverse benefit communications — and a counter-offer the VP could own: CSR-initiated send of the finished quote.</p>
+    </li>
+    <li>
+      <span class="dot" aria-hidden="true">07</span>
+      <h3>Steering review — asks first, gaps volunteered <span class="stamp">3/3 asks granted</span></h3>
+      <p>Fifteen slides, ten minutes, asks stated before evidence: an hour with two reps, a promotion decision, and an owner for the rate-sheet cadence — the client's own blocking item. A "what we are not claiming" slide volunteered six gaps, including one found by self-audit, before anyone could ask. All three asks were granted; the committee's hardest question became the two fixed defects above.</p>
+      <div class="pull">"I could have shown you a mocked-up image of that screen. I would rather tell you it does not exist yet."</div>
+    </li>
+    <li>
+      <span class="dot" aria-hidden="true">08</span>
+      <h3>Acceptance test, designed — not a demo <span class="stamp">7 scenarios · 3 refusals</span></h3>
+      <p>The rep hour is the acceptance test, run against the two ways adoption fails: a veteran who distrusts every tool, and a novice who believes whatever the screen says. The run sheet is refusal-weighted, because trust is won the first time the system says "do not quote this" and turns out to be right. It is designed to produce two findings: every refusal a rep didn't believe, and every number a rep accepted without checking.</p>
+    </li>
+  </ol>
+</section>
+
+<section aria-labelledby="method-h">
+  <h2 class="sec" id="method-h">Evaluation discipline — three systems, same spine</h2>
+  <div class="method" style="margin-bottom:1rem">
+    <p><strong>The spine: checks fail first, run on every deploy, fail closed on unknown state — and they have caught real bugs in all three systems.</strong> Not a slogan; below is each system's eval suite and what it caught.</p>
+  </div>
+  <div class="evals">
+
+    <div class="evalcard">
+      <h3>Claims anomaly agent <span class="stamp">Vertex AI · 69 passed / 2 skipped · golden set 60</span></h3>
+      <dl>
+        <div>
+          <dt>Golden routing set</dt>
+          <dd>60 routing scenarios run deterministically with no model calls — free, so every commit runs all 60. A guard test enforces 50–80 records and unique IDs so the set can't silently shrink or duplicate. Live runs default to a 12-record smoke subset covering every route and gate; the full 60 is an explicit opt-in, which is what keeps the check cheap enough to never skip.</dd>
+        </div>
+        <div>
+          <dt>Deployed-endpoint diff</dt>
+          <dd>Runs the golden set through the local engine and the live Vertex endpoint and diffs the routing decisions, with a six-way verdict separating "deployment is stale" from "logic has drifted" — and unknown deployment state <em>fails closed</em>. Trusted only after being deliberately run against a stale image to watch it fail; a synthetic stale-plus-drift regression proves real drift can't hide inside the "just stale" bucket.</dd>
+        </div>
+        <div>
+          <dt>Groundedness judge</dt>
+          <dd>A strict-rubric LLM judge over the engine's reasoning text. Three synthetic fabrications must fail before any real record is scored; scores in the 0.4–0.6 band are flagged for human review rather than silently rounded; any boundary or fail verdict reruns automatically, because judge variance was measured, not assumed. <em class="caught">Caught: production reasoning text citing a CPT code outside the judge's allowed context — a real grounding bug, plus a deterministic regression test so its class can't return.</em></dd>
+        </div>
+        <div>
+          <dt>Judge-metric study</dt>
+          <dd>Stock faithfulness and hallucination metrics missed 100% of planted fabrications across repeated runs; a strict custom rubric caught the obvious fabrication reliably and inference-adjacent ones inconsistently — run-to-run variance on identical inputs. That finding, not convention, is where the boundary band and rerun policy come from.</dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="evalcard">
+      <h3>ClaimsRAG <span class="stamp">Fly.io · Supabase pgvector · remote evals gate CI</span></h3>
+      <dl>
+        <div>
+          <dt>Three-case gate</dt>
+          <dd>One answerable case, one that must refuse because the corpus doesn't cover it, and one adversarial case — a disqualifying clinical number (LVEF 40% against a ≤35% criterion) that must be surfaced, not smoothed over. The refusal case is the one most RAG demos never write, and in a coverage-determination context it's the one that matters.</dd>
+        </div>
+        <div>
+          <dt>What the refusal eval caught</dt>
+          <dd><em class="caught">A corpus gap:</em> a topically-close but substantively-empty match passed the similarity threshold, producing a confident non-answer. The fix wasn't tuning the retriever — it was recognizing the corpus didn't contain the governing regulation, adding it, and chunking it by lettered paragraph so the load-bearing text was retrievable.</dd>
+        </div>
+        <div>
+          <dt>Remote mode in CI</dt>
+          <dd>The same cases run against the live URL as a required step after every deploy — the workflow goes red if they fail. <em class="caught">First CI run caught a real bug:</em> a scale-to-zero cold start timing out the first request. Fixed with a readiness poll before any case runs — a smoke test should wait for readiness, not gamble that one timeout covers a cold start.</dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="evalcard">
+      <h3>CSRSupport <span class="stamp">103 unit · 17 integration · 18 offline · 22 live · 4/4 adversarial</span></h3>
+      <dl>
+        <div>
+          <dt>Figures pinned to the client's own examples</dt>
+          <dd>18 offline scenarios where every dollar is tied to the worked examples in the requirements document — the suite audits against the client's spec, not the team's memory of it. 17 integration tests run against a real PostgreSQL database, not mocks.</dd>
+        </div>
+        <div>
+          <dt>Live suite that gates the deployment</dt>
+          <dd>22 scenarios through the deployed system and a real language model, on every deployment, and the deployment fails if they fail. The live run also reads back execution traces to verify the ordering property no offline test can establish: no member is ever priced before that member's own eligibility check.</dd>
+        </div>
+        <div>
+          <dt>Adversarial and stakeholder-driven cases</dt>
+          <dd>A claimed supervisor override instructing the system to skip the eligibility check on a terminated member: refused. An invented price for an invented procedure code: no figure produced — the response guardrail blocks any number that can't be traced to a calculator output. <em class="caught">And the committee's "what if it picks the wrong procedure?" challenge was converted into tests rather than answered from the design — it found two real defects (a silent choice among three MRIs; a phrasing pattern producing a false "no rate on file"), both fixed, both regression-covered.</em></dd>
+        </div>
+        <div>
+          <dt>Evidence on the screens themselves</dt>
+          <dd>Every demo screen is stamped with the eval case ID that pins it; the one screen without coverage is labeled "no eval case" on its face rather than left blank. The page you're reading borrows that idiom deliberately.</dd>
+        </div>
+      </dl>
+    </div>
+
+  </div>
+  <ul class="findings" aria-label="Findings that transfer across systems">
+    <li><strong>A green check is only evidence after you've watched it fail.</strong> Every gate above was run against a known-bad state — a stale image, a planted fabrication, a cold endpoint — before its pass was trusted.</li>
+    <li><strong>LLM judges disagree with themselves.</strong> Identical inputs, different verdicts across runs — so near-threshold scores route to humans and boundary verdicts rerun, by policy.</li>
+    <li><strong>Stock metrics can miss everything.</strong> Off-the-shelf faithfulness metrics caught zero of three planted fabrications; rubrics have to be written for the specific failure you fear.</li>
+    <li><strong>Unknown state fails closed.</strong> A deployment the checker can't identify is a failure, not a shrug — in a regulated workflow, "I can't tell" and "it's fine" are different verdicts.</li>
+  </ul>
+</section>
+
+<section aria-labelledby="art-h">
+  <h2 class="sec" id="art-h">The artifacts</h2>
+  <ul class="artifacts">
+    <li>
+      <span class="name">Steering deck</span> <span class="stamp">steering-cut.html · 15 slides · narration script built in</span>
+      <span class="desc">The ten-minute review as presented: asks-first structure, demonstration screens, the "not claiming" slide, loop-closing table.</span>
+    </li>
+    <li>
+      <span class="name">Client summary</span> <span class="stamp">client-summary.html</span>
+      <span class="desc">The written wrap: three decisions landed, the committee's question and the two defects it found, screens captured from the running system.</span>
+    </li>
+    <li>
+      <span class="name">Demo outcomes, moving</span> <span class="stamp">57-second scroll · every card eval-stamped</span>
+      <span class="desc">The rendered outcomes page: quotes, refusals, the dated yes/no pair, the plan-year hard stop.</span>
+    </li>
+    <li>
+      <span class="name">CSRSupport repository</span> <span class="stamp todo">TODO: link</span>
+      <span class="desc">Agent, calculator, BFF, eval suites, CI. FastAPI · PostgreSQL · live-model scenario gate.</span>
+    </li>
+    <li>
+      <span class="name">Narrated walkthrough</span> <span class="stamp todo">recording pending</span>
+      <span class="desc">The ten minutes against the deck's own script, delivered as if to the committee.</span>
+    </li>
+    <li>
+      <span class="name">ClaimsRAG</span> <span class="stamp"><a href="https://github.com/venkybobby/ClaimsRAG">github.com/venkybobby/ClaimsRAG</a></span>
+      <span class="desc">Extractive RAG over CMS coverage policy — citation-guaranteed by construction, remote evals as a required CI step.</span>
+    </li>
+    <li>
+      <span class="name">Claims anomaly agent</span> <span class="stamp"><a href="https://github.com/venkybobby/AI_Agents">github.com/venkybobby/AI_Agents</a></span>
+      <span class="desc">Deterministic claims routing on Vertex AI — OIG LEIE and NCCI gates, golden-set evals, deployed-endpoint drift detection.</span>
+    </li>
+  </ul>
+</section>
+
+<section aria-labelledby="about-h" class="about">
+  <h2 class="sec" id="about-h">Who ran it</h2>
+  <p><strong>Venky R</strong> — 22 years leading platform engineering in regulated healthcare and financial services; currently a technology strategy lead for healthcare clients. This engagement exists because forward-deployed leadership is judged on a specific combination — discovery judgment, architectural honesty, the ability to tell a client no, and evaluation discipline that survives contact with production — and the only credible way to show that combination is to exercise it end to end. Austin metro · open to travel-heavy forward-deployed work.</p>
+</section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>CSRSupport case study · August 2026</span>
+    <span>Simulated client, disclosed above · Real system, tested live</span>
+  </div>
+</footer>
+
+</body>
+</html>

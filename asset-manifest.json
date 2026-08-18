@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/venkyportfolio/static/css/main.75047a13.css",
+    "main.js": "/venkyportfolio/static/js/main.97a056e1.js",
+    "static/js/453.fad7223f.chunk.js": "/venkyportfolio/static/js/453.fad7223f.chunk.js",
+    "static/media/cqrs.png": "/venkyportfolio/static/media/cqrs.33f01bd6a3b6476be73f.png",
+    "static/media/AE reporting.png": "/venkyportfolio/static/media/AE reporting.6b25cbb8fab3781b87c4.png",
+    "static/media/orderstatus.png": "/venkyportfolio/static/media/orderstatus.13f560b213c32d4c0548.png",
+    "static/media/likelihood for patient calling and intent.png": "/venkyportfolio/static/media/likelihood for patient calling and intent.b818bc4c212334bb72fa.png",
+    "static/media/bg-light.png": "/venkyportfolio/static/media/bg-light.bac0efb485244a522981.png",
+    "static/media/bg-dark.png": "/venkyportfolio/static/media/bg-dark.f420c6b8458af72de935.png",
+    "index.html": "/venkyportfolio/index.html",
+    "main.75047a13.css.map": "/venkyportfolio/static/css/main.75047a13.css.map",
+    "main.97a056e1.js.map": "/venkyportfolio/static/js/main.97a056e1.js.map",
+    "453.fad7223f.chunk.js.map": "/venkyportfolio/static/js/453.fad7223f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.75047a13.css",
+    "static/js/main.97a056e1.js"
+  ]
+}
