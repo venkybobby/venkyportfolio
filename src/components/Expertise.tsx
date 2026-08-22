@@ -1,7 +1,8 @@
 import React from "react";
 import '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faReact, faDocker, faPython } from '@fortawesome/free-brands-svg-icons';
+import { faReact, faDocker } from '@fortawesome/free-brands-svg-icons';
+import { faRobot, faShieldHalved } from '@fortawesome/free-solid-svg-icons';
 import Chip from '@mui/material/Chip';
 import '../assets/styles/Expertise.scss';
 
@@ -20,24 +21,38 @@ const labelsFirst = [
 const labelsSecond = [
     "AWS (Lambda, Step Functions)",
     "Azure",
+    "GCP",
     "Cloud-Native",
     "CI/CD",
     "DevSecOps",
     "Camunda/BPMN",
     "Kafka",
     "DB2",
-    "Oracle",
-    "Graph Databases"
+    "Oracle"
 ];
 
 const labelsThird = [
-    "GitHub Copilot",
-    "Cursor",
+    "Anthropic Claude API",
+    "Vertex AI / Gemini",
     "AWS Bedrock",
     "LangGraph",
-    "GenAI for SDLC",
-    "AI-Enabled Engineering",
-    "Agentic AI Workflows"
+    "RAG & Extractive Retrieval",
+    "Promptfoo / DeepEval / G-Eval",
+    "LLM-Judge Design",
+    "GitHub Copilot",
+    "Cursor"
+];
+
+const labelsFourth = [
+    "NIST AI RMF",
+    "EU AI Act",
+    "ISO 42001",
+    "HIPAA",
+    "X12 837P EDI Claims",
+    "CMS NCD / NCCI Edits",
+    "OIG Exclusion Screening",
+    "Prior Authorization",
+    "Specialty Pharmacy"
 ];
 
 function Expertise() {
@@ -71,12 +86,24 @@ function Expertise() {
                 </div>
 
                 <div className="skill">
-                    <FontAwesomeIcon icon={faPython} size="3x"/>
-                    <h3>AI-Enabled SDLC & GenAI</h3>
-                    <p>Pioneered embedding AI into the SDLC, improving engineering productivity by ~30%. Delivered agentic AI workflows for clinical assessments and adverse event reporting. Institutionalized GitHub Copilot and Cursor standards with guardrails for quality and compliance.</p>
+                    <FontAwesomeIcon icon={faRobot} size="3x"/>
+                    <h3>Agentic AI, LLM Systems &amp; Evals</h3>
+                    <p>Ships production agentic systems with deterministic tool cores and LLM routing — the model routes, it never computes. Designs eval suites (golden sets, LLM-judge design, adversarial and refusal testing) that gate every deployment and fail closed on unknown state.</p>
                     <div className="flex-chips">
                         <span className="chip-title">Tech stack:</span>
                         {labelsThird.map((label, index) => (
+                            <Chip key={index} className='chip' label={label} />
+                        ))}
+                    </div>
+                </div>
+
+                <div className="skill">
+                    <FontAwesomeIcon icon={faShieldHalved} size="3x"/>
+                    <h3>AI Governance &amp; Healthcare Domain</h3>
+                    <p>Maps runtime AI evidence to NIST AI RMF and EU AI Act requirements with zero-PHI retention and tenant isolation. Deep regulated-healthcare domain expertise spanning claims, eligibility, prior authorization, and specialty pharmacy operations.</p>
+                    <div className="flex-chips">
+                        <span className="chip-title">Tech stack:</span>
+                        {labelsFourth.map((label, index) => (
                             <Chip key={index} className='chip' label={label} />
                         ))}
                     </div>

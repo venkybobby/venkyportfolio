@@ -1,4 +1,6 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCalculator, faMagnifyingGlassChart, faTriangleExclamation, faFileShield } from '@fortawesome/free-solid-svg-icons';
 import cqrsImage from '../assets/images/cqrs.png';
 import aeImage from '../assets/images/AE reporting.png';
 import orderStatusImage from '../assets/images/orderstatus.png';
@@ -9,7 +11,41 @@ import '../assets/styles/Project.scss';
 function Project() {
     return(
     <div className="projects-container" id="projects">
-        <h1>High-Impact Projects</h1>
+        <h1>Forward-Deployed AI Portfolio</h1>
+        <p className="projects-intro">Four production agentic systems, built and deployed end to end. One methodology across all four: checks fail first, run on every deployment, and fail closed on unknown state — and they have caught real bugs in production in each one.</p>
+        <div className="projects-grid">
+            <div className="project">
+                <div className="project-icon-box"><FontAwesomeIcon icon={faCalculator} size="2x"/></div>
+                <h2>CSRSupport — Payer Eligibility &amp; Cost Estimator</h2>
+                <p>Ran a complete forward-deployed engagement solo — discovery, scoping, a mid-build compliance re-scope, and a 15-slide steering review that won all three asks. Architected the system so the LLM only routes: every dollar figure comes from a deterministic calculator with an audit reference, verified by 108 unit / 17 integration / 18 offline / 22 live tests that gate every deployment. <strong>Impact: Found and fixed 2 real pricing defects, surfaced 15 drifted/missing/unnegotiated rates via an independent audit, and repelled 4 of 4 adversarial probes.</strong></p>
+            </div>
+            <div className="project">
+                <div className="project-icon-box"><FontAwesomeIcon icon={faMagnifyingGlassChart} size="2x"/></div>
+                <a href="https://claimsrag-chat.fly.dev" target="_blank" rel="noreferrer"><h2>ClaimsRAG — Citation-Guaranteed RAG over CMS Policy</h2></a>
+                <p>Built an extractive retrieval system that answers coverage questions from CMS NCD and CFR policy documents in verbatim policy text with structural citations, designing hallucination out rather than prompting it away. Wired remote evals against the live deployment as a required CI gate on every push to main. <strong>Impact: Refusal evals caught a real corpus gap; the first CI-gated eval run caught a production cold-start failure before it reached users.</strong></p>
+                <div className="project-links">
+                    <a href="https://claimsrag-chat.fly.dev" target="_blank" rel="noreferrer">Live Demo</a>
+                    <a href="https://github.com/venkybobby/ClaimsRAG" target="_blank" rel="noreferrer">GitHub</a>
+                </div>
+            </div>
+            <div className="project">
+                <div className="project-icon-box"><FontAwesomeIcon icon={faTriangleExclamation} size="2x"/></div>
+                <a href="https://github.com/venkybobby/AI_Agents" target="_blank" rel="noreferrer"><h2>Claims Anomaly Agent — Deterministic Routing on Vertex AI</h2></a>
+                <p>Built agentic claims-anomaly detection for X12 837P EDI claims covering OIG exclusion screening, CMS NCCI edits, and medical-necessity checks, driven by versioned YAML rule packs on Vertex AI. Designed a deployed-endpoint diff eval with a six-way stale/drift verdict and an LLM groundedness judge with a human-review boundary band. <strong>Impact: Caught a real grounding bug in production reasoning text, now covered by a deterministic regression test.</strong></p>
+                <div className="project-links">
+                    <a href="https://github.com/venkybobby/AI_Agents" target="_blank" rel="noreferrer">GitHub</a>
+                </div>
+            </div>
+            <div className="project">
+                <div className="project-icon-box"><FontAwesomeIcon icon={faFileShield} size="2x"/></div>
+                <a href="https://github.com/venkybobby/SARO" target="_blank" rel="noreferrer"><h2>SARO — Runtime AI Evidence &amp; Attestation Platform</h2></a>
+                <p>Took an AI-governance platform from concept to deployed production system solo: evaluates AWS Bedrock invocation logs against versioned, immutable rule packs and maps evidence to NIST AI RMF and EU AI Act Articles 9/13/17. Locked zero-PHI retention and tenant isolation as architectural invariants, enforced by CI guards rather than documentation. <strong>Impact: NIST AI RMF self-assessment, disclosed threat model, and reproducible evaluation delivered as first-class artifacts.</strong></p>
+                <div className="project-links">
+                    <a href="https://github.com/venkybobby/SARO" target="_blank" rel="noreferrer">GitHub</a>
+                </div>
+            </div>
+        </div>
+        <h1 className="projects-section-spacer">Enterprise Platform Projects</h1>
         <div className="projects-grid">
             <div className="project">
                 <img src={cqrsImage} className="zoom" alt="CQRS Architecture Diagram" width="100%"/>
