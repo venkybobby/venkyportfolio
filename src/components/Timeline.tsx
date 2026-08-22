@@ -16,7 +16,25 @@ function Timeline() {
             className="vertical-timeline-element--work"
             contentStyle={{ background: 'white', color: 'rgb(39, 40, 34)' }}
             contentArrowStyle={{ borderRight: '7px solid  white' }}
-            date="2022 - Present"
+            date="Mar 2026 - Present"
+            iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
+            icon={<FontAwesomeIcon icon={faBriefcase} />}
+          >
+            <h3 className="vertical-timeline-element-title">Technology Strategy Lead, Healthcare</h3>
+            <h4 className="vertical-timeline-element-subtitle">Accenture</h4>
+            <ul style={{marginTop: '10px', paddingLeft: '20px'}}>
+              <li>Drive enterprise AI and technology strategy for two $1B+ health plans, translating complex payer data ecosystems into phased, roadmap-aligned capability investments</li>
+              <li>Discover, audit, evaluate, and deploy agents into enterprise workflows for multiple regulated payer clients</li>
+              <li>Accelerate client AI roadmaps by applying GenAI and agentic patterns to customer-data and insight-platform use cases</li>
+              <li>Launched a structured operating model for CRM data change — intake, prioritization, design review, release readiness — aligning C-suite and technology stakeholders</li>
+              <li>Authored an agentic SDLC operating model (reimagine work, reskill workforce, redesign the workbench) defining how human PODs and agents share delivery accountability</li>
+            </ul>
+          </VerticalTimelineElement>
+          <VerticalTimelineElement
+            className="vertical-timeline-element--work"
+            contentStyle={{ background: 'white', color: 'rgb(39, 40, 34)' }}
+            contentArrowStyle={{ borderRight: '7px solid  white' }}
+            date="2022 - Jan 2026"
             iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >

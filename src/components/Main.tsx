@@ -19,8 +19,8 @@ function Main() {
             <a href="https://www.linkedin.com/in/venky0411" target="_blank" rel="noreferrer"><LinkedInIcon/></a>
           </div>
           <h1>Venkatesan Ramanathan</h1>
-          <p>Director of Software Engineering</p>
-          <p style={{fontSize: '0.9em', marginTop: '10px', opacity: 0.8}}>Distributed Systems | Cloud-Native Platforms | AI-Enabled SDLC | Enterprise Modernization</p>
+          <p>Technology Strategy Lead, Healthcare @ Accenture</p>
+          <p style={{fontSize: '0.9em', marginTop: '10px', opacity: 0.8}}>Forward-Deployed AI Leader | Production Agentic Systems | Evals &amp; Guardrails | Regulated Healthcare at Scale</p>
           <div className="phone-contact" style={{display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px'}}>
             <PhoneIcon style={{fontSize: '1.2em', color: '#ffffff'}}/>
             <a href="tel:570-817-1128" className="phone-number">570-817-1128</a>
