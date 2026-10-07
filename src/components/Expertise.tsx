@@ -2,7 +2,7 @@ import React from "react";
 import '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faReact, faDocker } from '@fortawesome/free-brands-svg-icons';
-import { faRobot, faShieldHalved } from '@fortawesome/free-solid-svg-icons';
+import { faRobot, faShieldHalved, faSitemap } from '@fortawesome/free-solid-svg-icons';
 import Chip from '@mui/material/Chip';
 import '../assets/styles/Expertise.scss';
 
@@ -55,6 +55,17 @@ const labelsFourth = [
     "Specialty Pharmacy"
 ];
 
+const labelsFifth = [
+    "Agile / Scrum",
+    "SDLC & Change Control",
+    "Vendor Management",
+    "COTS / SaaS Modernization",
+    "Portfolio & Budget Oversight",
+    "Workforce Planning",
+    "Onshore/Offshore Delivery",
+    "Steering Committee Reporting"
+];
+
 function Expertise() {
     return (
     <div className="container" id="expertise">
@@ -104,6 +115,18 @@ function Expertise() {
                     <div className="flex-chips">
                         <span className="chip-title">Tech stack:</span>
                         {labelsFourth.map((label, index) => (
+                            <Chip key={index} className='chip' label={label} />
+                        ))}
+                    </div>
+                </div>
+
+                <div className="skill">
+                    <FontAwesomeIcon icon={faSitemap} size="3x"/>
+                    <h3>Enterprise Solution Delivery &amp; IT Governance</h3>
+                    <p>Directs delivery of mission-critical enterprise solutions across custom builds, COTS/SaaS replacement, and cloud platforms. Oversees $20M+ annual portfolios and 180+ engineers across onshore, offshore, and vendor teams — owning intake, estimation, prioritization, budget, risk, and steering-level reporting to executive stakeholders.</p>
+                    <div className="flex-chips">
+                        <span className="chip-title">Practices:</span>
+                        {labelsFifth.map((label, index) => (
                             <Chip key={index} className='chip' label={label} />
                         ))}
                     </div>
